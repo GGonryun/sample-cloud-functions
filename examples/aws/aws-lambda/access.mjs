@@ -1,4 +1,4 @@
-const data = [
+const items = [
   // Compute Resources
   {
     label: "Web Server VM",
@@ -133,9 +133,9 @@ const data = [
 ];
 
 export const handler = async (event, context) => {
-  console.log(event);
+  console.log("Received Event:", JSON.stringify(event));
   if (event.eventType === "list") {
-    return data;
+    return { items };
   }
 
   return "ok";
